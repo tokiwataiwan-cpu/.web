@@ -86,6 +86,35 @@
         .section-header h2 { font-size: 2.2rem; color: var(--primary-blue); margin-bottom: 15px; }
         .section-header .line { width: 50px; height: 3px; background: var(--gold); margin: auto; }
 
+        /* 首頁設計特定樣式 */
+        .promo-banner {
+            background: rgba(0, 35, 71, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 60px 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 50px;
+            transition: var(--transition);
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+        .promo-banner:hover {
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+        .promo-banner h3 { font-size: 1.8rem; color: var(--gold); margin-bottom: 15px; }
+        .promo-banner .cta-text { 
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 30px;
+            background: var(--primary-blue);
+            color: var(--gold);
+            border-radius: 50px;
+            font-weight: bold;
+        }
+
         /* 試算系統頁籤樣式 */
         .calc-tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; }
         .tab-btn { 
@@ -117,6 +146,22 @@
         input[type="number"], input[type="text"], select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; }
         .btn-primary { width: 100%; padding: 15px; background: var(--primary-blue); color: var(--gold); border: none; border-radius: 6px; font-weight: bold; cursor: pointer; margin-top: 10px; font-size: 1rem; }
         
+        /* 法律計算機結果樣式 */
+        .result-box { margin-top: 30px; display: none; animation: fadeIn 0.5s; }
+        .heir-list { border-left: 4px solid var(--gold); padding-left: 30px; margin-bottom: 20px; line-height: 1.8; }
+        .heir-list li { margin-bottom: 8px; }
+        .excluded-list { background: #f0f2f5; padding: 15px 15px 15px 30px; border-radius: 4px; border-left: 4px solid #999; color: #666; font-size: 0.9rem; }
+        
+        /* 特留分強調樣式 */
+        .highlight { 
+            color: #d35400; 
+            font-weight: bold; 
+            margin-left: 15px; 
+            padding-left: 15px; 
+            border-left: 2px solid #ccc; 
+            display: inline-block; 
+        }
+
         /* 遺囑卡片 */
         .will-card { background: var(--white); border-radius: 8px; margin-bottom: 20px; border: 1px solid #eee; overflow: hidden; }
         .will-header { padding: 25px 30px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
@@ -129,8 +174,7 @@
             background: #fafafa; 
             padding: 0 30px; 
             color: #555; 
-            /* 這裡加入了 pre-line，讓程式碼中的換行直接對應到網頁上的換行 */
-            white-space: pre-line; 
+            white-space: pre-line;
         }
         .will-card.open .will-content { max-height: 2000px; padding: 30px; }
 
@@ -152,20 +196,9 @@
         .btn-add:hover { background: #b8952d; }
         .btn-remove { background: #ff4d4d; color: #fff; padding: 5px 10px; font-size: 0.8rem; border: none; border-radius: 5px; cursor: pointer; }
         
-        /* 圖表區塊修正與優化 */
-        .charts-container { 
-            display: grid; 
-            grid-template-columns: 1fr 1fr; 
-            gap: 20px; 
-            margin-top: 20px; 
-        }
-        /* 圖表容器限制 */
-        .chart-wrapper {
-            position: relative;
-            height: 260px; /* 固定高度，縮小圖表 */
-            width: 100%;
-            min-width: 0; /* 解決 CSS Grid 中 Canvas 寬度溢出 */
-        }
+        /* 圖表區塊 */
+        .charts-container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+        .chart-wrapper { position: relative; height: 260px; width: 100%; min-width: 0; }
         
         .legal-note { font-size: 0.85rem; color: #666; margin-top: 20px; padding: 10px; background: #eee; border-radius: 5px; }
 
@@ -180,7 +213,6 @@
             .nav-links { position: fixed; top: 70px; right: -100%; width: 100%; height: 100vh; background: var(--white); flex-direction: column; align-items: center; padding-top: 50px; transition: 0.4s; z-index: 1000; }
             .nav-links.show { right: 0; }
             .menu-toggle { display: block; }
-            /* 手機版改為單欄 */
             .charts-container { grid-template-columns: 1fr; }
             .main-grid { grid-template-columns: 1fr; }
         }
@@ -218,6 +250,14 @@
             <h2>遺產繼承，交給專業來領航</h2>
             <div class="line"></div>
         </div>
+        
+        <a href="https://www.google.com" target="_blank" class="promo-banner">
+            <h3>📅 4 ~ 6 月講座預約中</h3>
+            <p>專業傳承心法，讓愛無後顧之憂</p>
+            <p style="color: #666; font-size: 0.9rem; margin-top: 10px;">點擊此處了解詳情並預約席次</p>
+            <span class="cta-text">立即預約</span>
+        </a>
+
         <div class="section-header"><h3>服務介紹</h3></div>
         <p style="text-align: center; color: #666; max-width: 800px; margin: auto;">
             結合律師、會計師、地政士三方專業，為您提供從法律效力、稅務優化到產權登記的一站式精準服務。
@@ -289,7 +329,6 @@
         </div>
     </main>
 
-
     <main id="calculator" class="page-section">
         <div class="section-header">
             <h2>財產分配與法律試算系統</h2>
@@ -304,8 +343,8 @@
 
         <div id="calc-legal" class="calc-container active">
             <div class="input-group">
-                <label>總遺產金額(萬元) (NT$)</label>
-                <input type="number" id="totalAmount" value="1000">
+                <label>總遺產金額 (萬元)</label>
+                <input type="number" id="totalAmount" value="3000" placeholder="請輸入金額">
             </div>
             <div class="input-group">
                 <label>配偶是否健在？</label>
@@ -315,17 +354,21 @@
                 </select>
             </div>
             <div class="input-group" style="background: #f9f9f9; padding: 15px; border-radius: 8px;">
-                <label>各順位人數</label>
+                <label>各順位人數 (若無則填0)</label>
+                <p style="font-size:0.8rem; color:#666; margin-bottom:10px;">註：採「有前無後」原則，若第一順位有人，後續順位將無權繼承。</p>
                 第一順位 (子女/孫子女)：<input type="number" id="rank1" value="0" min="0" style="margin-bottom:10px;">
                 第二順位 (父母)：<input type="number" id="rank2" value="0" min="0" style="margin-bottom:10px;">
                 第三順位 (兄弟姊妹)：<input type="number" id="rank3" value="0" min="0" style="margin-bottom:10px;">
                 第四順位 (祖父母)：<input type="number" id="rank4" value="0" min="0">
             </div>
             <button class="btn-primary" onclick="calculateLegal()">開始法律試算</button>
-            <div id="legal-result" style="margin-top: 20px; display: none;">
-                <h4 style="color:var(--primary-blue);">試算結果</h4>
-                <div id="heirInfo" style="border-left: 4px solid var(--gold); padding-left: 15px; margin: 15px 0;"></div>
-                <div id="excludedInfo" style="font-size: 0.9rem; color: #888;"></div>
+            
+            <div id="legal-result" class="result-box">
+                <h3 style="color:var(--primary-blue); margin-bottom:15px;">試算結果</h3>
+                <div id="heirInfo" class="heir-list"></div>
+                
+                <h4 style="color:#666; margin-bottom:10px; margin-top:20px;">⚠️ 無法得到遺產的人</h4>
+                <div id="excludedInfo" class="excluded-list"></div>
             </div>
         </div>
 
@@ -341,7 +384,7 @@
                         <div class="asset-item"><label>📜 保險理賠金</label><input type="number" class="asset-val" value="0" oninput="updateManualAll()"></div>
                     </div>
                     <div class="total-banner">
-                        總資產預估：NT$ <span id="display-total">0</span>
+                        總資產預估： <span id="display-total">0 </span> (萬元)
                     </div>
                 </div>
 
@@ -496,7 +539,7 @@
         <div class="footer-logo">第一顧問 Top One Consulting</div>
         <p>專業 Professional · 精準 Precision · 夥伴 Partnership</p>
         <div style="margin-top: 20px; font-size: 0.9rem; font-weight: bold; color: var(--gold);">
-            第一顧問 遺囑專家 · 政府立案  品質保證 · 保留一切著作權
+            第一顧問 遺囑專家 · 政府立案 · 保留一切著作權
         </div>
         <div style="margin-top: 10px; font-size: 0.8rem; opacity: 0.6;">&copy; 2026 第一顧問 專業團隊.</div>
     </footer>
@@ -526,29 +569,76 @@
             if(type === 'manual') { initManualCharts(); }
         }
 
-        /* --- 工具 1: 法律計算機邏輯 --- */
+        /* --- 工具 1: 法律計算機邏輯 (已整合新邏輯與排版) --- */
         function calculateLegal() {
-            const total = parseFloat(document.getElementById('totalAmount').value);
+            const total = parseFloat(document.getElementById('totalAmount').value) || 0;
             const hasSpouse = document.getElementById('hasSpouse').value === 'yes';
-            const r = [parseInt(document.getElementById('rank1').value)||0, parseInt(document.getElementById('rank2').value)||0, parseInt(document.getElementById('rank3').value)||0, parseInt(document.getElementById('rank4').value)||0];
-            let activeRank = r.findIndex(val => val > 0) + 1;
+            const r1 = parseInt(document.getElementById('rank1').value) || 0;
+            const r2 = parseInt(document.getElementById('rank2').value) || 0;
+            const r3 = parseInt(document.getElementById('rank3').value) || 0;
+            const r4 = parseInt(document.getElementById('rank4').value) || 0;
+
             let heirText = "";
+            let excludedText = "";
             document.getElementById('legal-result').style.display = 'block';
+
+            // 邏輯判定：誰是有效繼承人
+            let activeRank = 0;
+            if (r1 > 0) activeRank = 1;
+            else if (r2 > 0) activeRank = 2;
+            else if (r3 > 0) activeRank = 3;
+            else if (r4 > 0) activeRank = 4;
+
+            // 計算分配比例
             if (activeRank === 0 && !hasSpouse) {
                 heirText = "無法律規定之繼承人，遺產可能歸屬國庫。";
             } else {
-                let spouseShare = 0, othersShare = 0, numOthers = r[activeRank-1] || 0;
-                if (activeRank === 1) { spouseShare = 1 / (numOthers + 1); othersShare = spouseShare; }
-                else if (activeRank === 2 || activeRank === 3) { spouseShare = 0.5; othersShare = 0.5 / numOthers; }
-                else if (activeRank === 4) { spouseShare = 2/3; othersShare = (1/3) / numOthers; }
-                else { spouseShare = 1; }
+                let spouseShare = 0;
+                let othersShare = 0;
+                let numOthers = 0;
 
-                if (!hasSpouse) { spouseShare = 0; othersShare = 1 / numOthers; }
+                if (activeRank === 1) {
+                    numOthers = r1;
+                    spouseShare = 1 / (numOthers + 1);
+                    othersShare = 1 / (numOthers + 1);
+                } else if (activeRank === 2 || activeRank === 3) {
+                    numOthers = (activeRank === 2) ? r2 : r3;
+                    spouseShare = 1 / 2;
+                    othersShare = (1 / 2) / numOthers;
+                } else if (activeRank === 4) {
+                    numOthers = r4;
+                    spouseShare = 2 / 3;
+                    othersShare = (1 / 3) / numOthers;
+                } else {
+                    spouseShare = 1; // 無其他順位
+                }
 
-                if (hasSpouse) heirText += `<li>配偶：應繼分 ${(spouseShare*100).toFixed(1)}% (約 NT$${(total*spouseShare).toLocaleString()})</li>`;
-                if (activeRank > 0) heirText += `<li>順位繼承者：每人應繼分 ${(othersShare*100).toFixed(1)}%</li>`;
+                if (!hasSpouse) {
+                    spouseShare = 0;
+                    othersShare = 1 / numOthers;
+                }
+
+                // 輸出結果 (含特留分與排版)
+                if (hasSpouse) {
+                    heirText += `<li><b>配偶：</b> 應繼分 ${(spouseShare*100).toFixed(1)}% (約 NT$${(total*spouseShare).toLocaleString()}萬元)，<span class="highlight">特留分 ${(spouseShare*100/2).toFixed(1)}%</span></li>`;
+                }
+                if (activeRank > 0) {
+                    const rankNames = ["", "第一順位(子女/孫子女)", "第二順位(父母)", "第三順位(兄弟姊妹)", "第四順位(祖父母)"];
+                    let portionBase = (activeRank <= 2) ? 0.5 : (1/3); // 前兩順位特留分為應繼分1/2，後兩順位為1/3
+                    heirText += `<li><b>${rankNames[activeRank]} (共 ${numOthers} 人)：</b> 每人應繼分 ${(othersShare*100).toFixed(1)}%，<span class="highlight">特留分 ${(othersShare*100*portionBase).toFixed(1)}%</span></li>`;
+                }
             }
+
+            // 排除名單判定
+            if (activeRank === 1) excludedText += "<li>因第一順位有人，故第二、三、四順位繼承人均無權繼承。</li>";
+            else if (activeRank === 2) excludedText += "<li>因第二順位有人，故第三、四順位繼承人均無權繼承。</li>";
+            else if (activeRank === 3) excludedText += "<li>因第三順位有人，故第四順位繼承人無權繼承。</li>";
+            
+            if (activeRank === 0 && !hasSpouse) excludedText = "查無符合民法 1138 條之繼承人。";
+            else if (excludedText === "") excludedText = "目前無明確被排除之順位。";
+
             document.getElementById('heirInfo').innerHTML = heirText;
+            document.getElementById('excludedInfo').innerHTML = excludedText;
         }
 
         /* --- 工具 2: 手動分配器邏輯 --- */
@@ -630,7 +720,7 @@
                 }
                 labels.push(b.name);
                 data.push(amount);
-                html += `<li><b>${b.name}</b>: 分得約 NT$ ${Math.round(amount).toLocaleString()} (${(percent*100).toFixed(1)}%)</li>`;
+                html += `<li><b>${b.name}</b>: 分得約 NT$ ${Math.round(amount).toLocaleString()}萬元 (${(percent*100).toFixed(1)}%)</li>`;
             });
             document.getElementById('allocation-summary').innerHTML = html + "</ul>";
             
@@ -640,28 +730,54 @@
         function initManualCharts() {
             if (pieChart) return;
             renderBeneficiaries();
+            
             const ctxP = document.getElementById('pieChart').getContext('2d');
             const ctxB = document.getElementById('barChart').getContext('2d');
-            const colors = ['#002347', '#D4AF37', '#2E5A88', '#E5C467', '#5C85AD', '#F0D991'];
             
-            // 修正：加入 maintainAspectRatio: false 讓圖表適應限制的高度
+            // 定義一組顏色，讓圓餅圖和長條圖共用
+            const colors = ['#002347', '#D4AF37', '#2E5A88', '#E5C467', '#5C85AD', '#F0D991', '#89A6C4', '#A68934', '#CBD9E4', '#554411'];
+            
+            // 1. 圓餅圖設定
             pieChart = new Chart(ctxP, { 
                 type: 'pie', 
-                data: { labels: [], datasets: [{ data: [], backgroundColor: colors }] }, 
+                data: { 
+                    labels: [], 
+                    datasets: [{ 
+                        data: [], 
+                        backgroundColor: colors 
+                    }] 
+                }, 
                 options: { 
                     responsive: true, 
-                    maintainAspectRatio: false, // 關鍵修正
-                    plugins: { legend: { position: 'right' } } 
+                    maintainAspectRatio: false, // 修正：讓圖表適應限制的高度
+                    plugins: { legend: { position: 'right' } } // 修正：圖例改到右側
                 } 
             });
             
+            // 2. 長條圖設定
             barChart = new Chart(ctxB, { 
                 type: 'bar', 
-                data: { labels: [], datasets: [{ label: '金額', data: [], backgroundColor: '#D4AF37' }] }, 
+                data: { 
+                    labels: [], 
+                    datasets: [{ 
+                        label: '金額', 
+                        data: [], 
+                        backgroundColor: colors // 保留功能：顏色與圓餅圖同步
+                    }] 
+                }, 
                 options: { 
                     responsive: true, 
-                    maintainAspectRatio: false, // 關鍵修正
-                    plugins: { legend: { display: false } } 
+                    maintainAspectRatio: false, // 修正：讓圖表適應限制的高度
+                    plugins: { 
+                        legend: { display: false }, // 修正：隱藏長條圖圖例
+                        tooltip: { // 保留功能：滑鼠移上去顯示「元」
+                            callbacks: {
+                                label: function(context) {
+                                    return '金額: ' + context.parsed.y.toLocaleString() + ' 元';
+                                }
+                            }
+                        }
+                    } 
                 } 
             });
             
