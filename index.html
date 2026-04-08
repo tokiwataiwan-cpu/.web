@@ -244,27 +244,82 @@
             </ul>
         </nav>
     </header>
-
-    <main id="home" class="page-section active">
+<main id="home" class="page-section active">
         <div class="section-header">
-            <h2>遺產繼承，交給專業來領航</h2>
-            <div class="line"></div>
+            <h1 style="font-size: 2.8rem; color: var(--primary-blue); margin-bottom: 10px;">遺產繼承，交給專業來領航</h1>
+            <p style="font-size: 1.2rem; color: #666;">專業律師、會計師、地政士團隊，守護您的家族傳承</p>
+            <div class="line" style="margin-top: 20px;"></div>
         </div>
-        
+
         <a href="https://lin.ee/7XSpHjQ" target="_blank" class="promo-banner">
-            <h3>📅 4 ~ 6 月講座預約中</h3>
-            <p>專業傳承心法，讓愛無後顧之憂</p>
-            <p style="color: #666; font-size: 0.9rem; margin-top: 10px;">點擊此處了解詳情並預約席次</p>
-            <span class="cta-text">立即預約</span>
+            <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <div style="font-size: 3rem;">📅</div>
+                <div style="text-align: left;">
+                    <h3 style="margin-bottom: 5px;">4 ~ 6 月免費實體講座預約中</h3>
+                    <p>專業傳承心法，現場解答您的繼承疑慮（名額有限）</p>
+                </div>
+                <span class="cta-text">立即預約席次</span>
+            </div>
         </a>
 
-        <div class="section-header"><h3>服務介紹</h3></div>
-        <p style="text-align: center; color: #666; max-width: 800px; margin: auto;">
-            結合律師、會計師、地政士三方專業，為您提供從法律效力、稅務優化到產權登記的一站式精準服務。
-        </p>
-    </main>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 60px;">
+            <div style="text-align: center; padding: 30px; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                <div style="font-size: 2.5rem; margin-bottom: 15px;">⚖️</div>
+                <h3 style="color: var(--primary-blue); margin-bottom: 10px;">法律效力保障</h3>
+                <p style="color: #666; font-size: 0.95rem;">由專業律師親自把關，確保每一份遺囑都符合民法法定格式，杜絕未來可能的繼承爭議。</p>
+            </div>
+            <div style="text-align: center; padding: 30px; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                <div style="font-size: 2.5rem; margin-bottom: 15px;">🛡️</div>
+                <h3 style="color: var(--primary-blue); margin-bottom: 10px;">稅務預先規劃</h3>
+                <p style="color: #666; font-size: 0.95rem;">結合會計師專業，提前試算遺產稅負，透過合法路徑達成節稅效果，留住更多資產給愛的人。</p>
+            </div>
+            <div style="text-align: center; padding: 30px; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                <div style="font-size: 2.5rem; margin-bottom: 15px;">🤝</div>
+                <h3 style="color: var(--primary-blue); margin-bottom: 10px;">全方位代管執行</h3>
+                <p style="color: #666; font-size: 0.95rem;">一站式服務涵蓋地政登記與資產執行，讓您從規劃到落實都能感受到第一顧問的溫度與專業。</p>
+            </div>
+        </div>
 
-    <main id="will-intro" class="page-section">
+        <div style="background: white; padding: 40px; border-radius: 12px; border: 1px solid #eee; margin-bottom: 60px;">
+            <div class="section-header" style="margin-bottom: 30px;">
+                <h3 style="font-size: 1.5rem;">如何開始您的傳承規劃？</h3>
+            </div>
+            <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; text-align: center;">
+                <div style="flex: 1; min-width: 150px;">
+                    <div style="width: 40px; height: 40px; background: var(--gold); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; font-weight: bold;">1</div>
+                    <p style="font-weight: bold;">自我檢測</p>
+                    <p style="font-size: 0.85rem; color: #888;">了解您的迫切程度</p>
+                </div>
+                <div style="flex: 1; min-width: 150px;">
+                    <div style="width: 40px; height: 40px; background: var(--primary-blue); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; font-weight: bold;">2</div>
+                    <p style="font-weight: bold;">財產試算</p>
+                    <p style="font-size: 0.85rem; color: #888;">掌握遺產分配現狀</p>
+                </div>
+                <div style="flex: 1; min-width: 150px;">
+                    <div style="width: 40px; height: 40px; background: var(--primary-blue); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; font-weight: bold;">3</div>
+                    <p style="font-weight: bold;">專家諮詢</p>
+                    <p style="font-size: 0.85rem; color: #888;">訂製專屬法律方案</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <button onclick="showPage('quiz')" class="btn-primary" style="max-width: 300px; background: var(--gold); color: white; border-radius: 50px;">
+                    立即進行線上評估
+                </button>
+            </div>
+        </div>
+
+
+<div class="section-header"><h3>專業團隊合作</h3></div>
+
+<div style="text-align: center; color: #666; max-width: 800px; margin: auto; line-height: 2;">
+    <p style="margin-bottom: 10px;">我們明白遺囑不僅是法律文件，更是愛的傳遞。</p>
+    <p style="margin-bottom: 10px;">
+        <b>第一顧問 遺囑專家</b> 結合<strong>律師</strong>、<strong>會計師</strong>、<strong>地政士</strong>三方專業力量，
+    </p>
+    <p>為您提供從法律效力審核、稅務優化配置到不動產產權登記的精準服務。</p>
+</div>
+    </main>
+       <main id="will-intro" class="page-section">
         <div class="section-header">
             <h2>五種遺囑形式介紹</h2>
             <p>點擊下方項目了解詳情</p>
